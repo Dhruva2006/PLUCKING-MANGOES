@@ -4,7 +4,7 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
-var Boy; 
+var Boy, boy;
 
 function preload()
 {
@@ -23,7 +23,7 @@ function setup() {
 
 	//Create the Bodies Here.
 
-	tree1 = new Tree(600, 400, 150, 20);
+	tree1 = new Tree(700, 150, 250, 350);
 
 	mango1 = new Mango(600, 400, 10, 10);
 	mango2 = new Mango(610, 400, 10, 10);
@@ -32,6 +32,7 @@ function setup() {
 	
 
 	chain1 = new Chain(stone.body, mango1.body);
+	slingshot = new SlingShot(stone.body,{x:200, y:200});
 
 	Engine.run(engine);
   
