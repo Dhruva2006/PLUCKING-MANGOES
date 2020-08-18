@@ -32,7 +32,19 @@ function setup() {
 	
 
 	chain1 = new Chain(stone.body, mango1.body);
-	slingshot = new SlingShot(stone.body,{x:200, y:200});
+	slingshot = new SlingShot(stone.body,{x:190, y:190});
+
+	
+
+	function detectollision(stone1 , mango) {
+		mangoBodyPosition = mango.body.position
+		stoneBoadyPosition = stone.body.position
+
+		var distance = dist(stoneBodyPosition.x, stoneBoadyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
+		if(distance < -mango.r + stone1.r){
+			Matter.Body.setStatic(mango.body, false);
+		}
+	}
 
 	Engine.run(engine);
   
